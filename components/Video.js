@@ -356,6 +356,7 @@ class Video extends Component {
       controlDuration,
       hideFullScreenControl,
       statusBarShowAlways,
+      statusBarHideAlways,
     } = this.props
 
     const inline = {
@@ -378,7 +379,10 @@ class Video extends Component {
           fullScreen ? null : style
         ]}
       >
-        <StatusBar hidden={(statusBarShowAlways ? false : fullScreen)} />
+        {!statusBarHideAlways &&
+          <StatusBar hidden={(statusBarShowAlways ? false : fullScreen)} />
+        }
+
         {
           ((loading && placeholder) || currentTime < 0.01) &&
           <Image resizeMode="cover" style={styles.image} {...checkSource(placeholder)} />
@@ -480,6 +484,7 @@ Video.propTypes = {
   resizeMode: PropTypes.string,
   controlDuration: PropTypes.number,
   statusBarShowAlways:PropTypes.bool,
+  statusBarHideAlways:PropTypes.bool,
 }
 
 Video.defaultProps = {
@@ -511,6 +516,7 @@ Video.defaultProps = {
   resizeMode: 'contain',
   controlDuration: 3,
   statusBarShowAlways: false,
+  statusBarHideAlways: false,
 }
 
 export default Video
