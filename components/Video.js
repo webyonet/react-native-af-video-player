@@ -354,6 +354,7 @@ class Video extends Component {
       playInBackground,
       playWhenInactive,
       controlDuration,
+      onToggleControl,
       hideFullScreenControl,
       statusBarShowAlways,
       statusBarHideAlways,
@@ -429,6 +430,7 @@ class Video extends Component {
           theme={setTheme}
           inlineOnly={inlineOnly}
           controlDuration={controlDuration}
+          onToggleControl={onToggleControl}
           hideFullScreenControl={hideFullScreenControl}
         />
       </Animated.View>
@@ -475,6 +477,7 @@ Video.propTypes = {
   onMorePress: PropTypes.func,
   onFullScreen: PropTypes.func,
   onTimedMetadata: PropTypes.func,
+  onToggleControl: PropTypes.func,
   rate: PropTypes.number,
   volume: PropTypes.number,
   lockRatio: PropTypes.number,
@@ -507,6 +510,7 @@ Video.defaultProps = {
   onMorePress: undefined,
   onFullScreen: () => {},
   onTimedMetadata: () => {},
+  onToggleControl: () => {},
   rate: 1,
   volume: 1,
   lockRatio: undefined,
