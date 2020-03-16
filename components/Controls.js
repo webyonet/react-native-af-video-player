@@ -192,7 +192,7 @@ Controls.propTypes = {
   onMorePress: PropTypes.func.isRequired,
   paused: PropTypes.bool.isRequired,
   inlineOnly: PropTypes.bool.isRequired,
-  hideFullScreenControl: PropTypes.bool.isRequired,
+  hideFullScreenControl: PropTypes.bool,
   fullscreen: PropTypes.bool.isRequired,
   muted: PropTypes.bool.isRequired,
   more: PropTypes.bool.isRequired,
@@ -201,7 +201,7 @@ Controls.propTypes = {
   currentTime: PropTypes.number.isRequired,
   duration: PropTypes.number.isRequired,
   title: PropTypes.string.isRequired,
-  logo: PropTypes.string.isRequired,
+  logo: PropTypes.string,
   theme: PropTypes.object.isRequired
 }
 
