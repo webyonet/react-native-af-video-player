@@ -358,6 +358,7 @@ class Video extends Component {
       hideFullScreenControl,
       statusBarShowAlways,
       statusBarHideAlways,
+      selectedVideoTrack
     } = this.props
 
     const inline = {
@@ -399,6 +400,7 @@ class Video extends Component {
           volume={volume}
           muted={muted}
           ignoreSilentSwitch="ignore"
+          selectedVideoTrack={selectedVideoTrack}
           playInBackground={playInBackground} // Audio continues to play when app entering background.
           playWhenInactive={playWhenInactive} // [iOS] Video continues to play when control or notification center are shown.
           // progressUpdateInterval={250.0}          // [iOS] Interval to fire onProgress (default to ~250ms)
@@ -489,6 +491,7 @@ Video.propTypes = {
   controlDuration: PropTypes.number,
   statusBarShowAlways:PropTypes.bool,
   statusBarHideAlways:PropTypes.bool,
+  selectedVideoTrack:PropTypes.object,
 }
 
 Video.defaultProps = {
