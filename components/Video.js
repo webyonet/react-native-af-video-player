@@ -13,7 +13,7 @@ import {
 import VideoPlayer from 'react-native-video'
 import KeepAwake from 'react-native-keep-awake'
 import Orientation from 'react-native-orientation'
-import Icons from 'react-native-vector-icons/MaterialIcons'
+import Icons from 'react-native-vector-icons/MaterialCommunityIcons'
 import { Controls } from './'
 import { checkSource } from './utils'
 const Win = Dimensions.get('window')
@@ -316,7 +316,7 @@ class Video extends Component {
       >
         <Text style={textStyle}>Video Oynatılamıyor</Text>
         <Icons
-          name="videocam_off"
+          name="video-off"
           size={60}
           color="#ffffff"
           onPress={() => this.setState({ renderError: false })}
