@@ -180,7 +180,7 @@ class Video extends Component {
           type = Alert.alert(error.title, error.message, error.button, error.options)
           break
         default:
-          type = Alert.alert('Oops!', 'There was an error playing this video, please try again later.', [{ text: 'Close' }])
+          type = Alert.alert('Video Oynatılamadı', 'Video eğitmen tarafından hatalı gönderilmiş. Lütfen sorun bildir butonundan bu durumu bize iletin', [{ text: 'Kapat' }])
           break
       }
       return type
@@ -314,11 +314,11 @@ class Video extends Component {
       <Animated.View
         style={[styles.background, fullScreen ? styles.fullScreen : inline]}
       >
-        <Text style={textStyle}>Retry</Text>
+        <Text style={textStyle}>Video Oynatılamıyor</Text>
         <Icons
-          name="replay"
+          name="videocam_off"
           size={60}
-          color={this.props.theme}
+          color="#ffffff"
           onPress={() => this.setState({ renderError: false })}
         />
       </Animated.View>
